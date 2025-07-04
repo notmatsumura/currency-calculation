@@ -88,7 +88,6 @@ async function generate() {
   try {
     let rate;
 
-    // 複数のAPIを試す
     try {
       const res = await fetch(`https://api.exchangerate-api.com/v4/latest/JPY`);
       if (res.ok) {
@@ -118,7 +117,6 @@ async function generate() {
     }
 
     if (!rate) {
-      // フォールバック：参考レート（2024年参考値）
       const fallbackRates = {
         USD: 0.0067,
         EUR: 0.0061,
@@ -153,7 +151,6 @@ async function generate() {
     }
 
     const today = new Date().toISOString().split("T")[0].replace(/-/g, "/");
-    const rateSource = "（リアルタイム取得 or 参考値）";
 
     const format = (value) => {
       const raw = value * rate;
@@ -162,13 +159,9 @@ async function generate() {
         : raw.toFixed(2);
     };
 
-    // 為替レート情報
-    const rateText = `為替レート：1円 = ${rate.toFixed(
-      6
-    )} ${currency} ${rateSource}
+    const rateText = `為替レート：1円 = ${rate.toFixed(6)} ${currency}
 取得日時：${today}`;
 
-    // コピー対象文面
     const copyText = `${currency}向け希望単価ライン
 ↓
 Base Fee
