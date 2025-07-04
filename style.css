@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: black;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+h2 {
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+select,
+button {
+  font-size: 16px;
+  padding: 8px 12px;
+  margin: 10px 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* 為替レート情報エリア */
+.rate-info {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 4px;
+  text-align: left;
+  font-size: 16px;
+  white-space: pre-wrap;
+  margin-top: 20px;
+}
+
+/* コピー対象エリア */
+.copy-wrapper {
+  position: relative;
+  margin-top: 15px;
+}
+
+.copy-label {
+  background: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px 4px 0 0;
+  font-weight: bold;
+  text-align: left;
+  font-size: 14px;
+}
+
+#copyTarget {
+  background: #f2f9ff;
+  border: 2px solid #007bff;
+  border-top: none;
+  padding: 15px;
+  border-radius: 0 0 6px 6px;
+  font-size: 16px;
+  white-space: pre-wrap;
+  text-align: left;
+  margin: 0;
+}
+
+.copy-target-container {
+  position: relative;
+}
+
+/* コピーアイコン */
+#copyBtn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: white;
+  border: 1px solid #007bff;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #007bff;
+}
+
+#copyBtn:hover {
+  background: #007bff;
+  color: white;
+}
+
+.error {
+  color: red;
+  background: #ffe6e6;
+  border: 1px solid #ff0000;
+}
+
+.loading {
+  color: blue;
+  background: #e6f3ff;
+  border: 1px solid #0066cc;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  select,
+  button {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+}

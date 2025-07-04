@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>報酬換算</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>報酬換算</h2>
+
+      <label for="currency">通貨を選択：</label><br />
+      <select id="currency"></select>
+
+      <br />
+      <button onclick="generate()">換算する</button>
+
+      <!-- コピー対象エリア -->
+      <div id="copyWrapper" class="copy-wrapper hidden">
+        <div class="copy-label">📋 報酬レート</div>
+        <div class="copy-target-container">
+          <pre id="copyTarget">ここにコピー対象の文面が表示されます</pre>
+          <button id="copyBtn" title="コピー" onclick="copyBonusText()">
+            📋 コピーする
+          </button>
+        </div>
+      </div>
+      <!-- 為替レート情報表示エリア -->
+      <div id="rateInfo" class="rate-info hidden">
+        <pre id="rateOutput">ここに為替レート情報が表示されます</pre>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
